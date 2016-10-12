@@ -1,6 +1,7 @@
 // api request url - https://bikeindex.org/oauth/token?grant_type=refresh_token&client_id={app_id}&refresh_token={refresh_token}
 //applicatio id - b84fea068c930c28772e933114525841a77bb8b645bde1a117b21d5e44bf3d7c
 //secret - 2b940f6705ba3c9ff419caa1be3034e2897c960c2a424beac7902855a921ef93
+/*jshint esversion: 6 */ //this gets rid of jshint flag
 
 function Bike() {
 }
