@@ -3,25 +3,27 @@
   <head>
     <script src="build/js/vendor.min.js"></script>
     <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="build/css/styles.css">
     <script type="text/javascript" src="build/js/app.js"></script>
     <title>Bike Finder</title>
   </head>
-  <body>
+  <body class="blur">
     <div class="container">
-      <h1 class="well text-center">Bike Stuff</h1>
-      <form class="form-group" action="index.html" method="post">
-
-        <label for="make">Make</label>
-        <input id="make" type="text" name="make" value="" placeholder="schwinn">
-        <br>
-        <label for="color">Color</label>
-        <input id="color" type="text" name="color" value="" placeholder="red,blue">
-        <br>
-        <button id="button" type="button" name="button">Click Me!</button>
-      </form>
+      <h1 class="well well-sm text-center">Bike Stuff</h1>
       <div class="row">
-        <div class="showBikes"></div>
-      </div>
+        <div class="col-sm-4">
+          <form class="form-group" action="index.html" method="post">
+            <label for="make">Make</label>
+            <input id="make" type="text" name="make" value="" placeholder="schwinn">
+            <br>
+            <label for="color">Color</label>
+            <input id="color" type="text" name="color" value="" placeholder="red,blue">
+            <br>
+            <button id="button" class="btn-danger" type="button" name="button">Find Bikes!</button>
+          </form>
+        </div>
+          <div class="showBikes"></div>
+        </div>
     </div>
   </body>
 </html>
