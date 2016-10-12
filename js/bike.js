@@ -6,11 +6,21 @@ function Bike() {
 }
 
 Bike.prototype.getBike = function(make, color) {
-    $.get('https://bikeindex.org/api/v2/bikes_search?page=1&per_page=10&colors='+color+'&manufacturer='+make).then(function(response) {
+    $.get('https://bikeindex.org/api/v2/bikes_search?page=1&per_page=5&colors='+color+'&manufacturer='+make).then(function(response) {
     console.log(response);
-  //  $('.showHumidity').text("The humidity is " + response.main.humidity + "%.");
-//    $('.showWindSpeed').text("The wind speed is " + response.wind.speed + "mph.");
-  //  $('.showWindDir').text("The wind direction is " + response.wind.deg + " degrees.");
+    for (var bike of response.bikes) {
+      console.log(bike);
+      var thumblink;
+      if (bike.thumb === null) {
+        thumblink = '<img src="/img/bike.jpg" alt="pic of bike" />';
+      } else {
+        thumblink ='<img src="'+bike.thumb+'" alt="pic of bike" />';
+      }
+
+      $('.showBikes').append('<div class="bike-thumbs col-sm-4">' +
+      thumblink +
+      '</div>');
+    }
   }).fail(function(error) {
     $('.bikeObject').text(error);
   });
