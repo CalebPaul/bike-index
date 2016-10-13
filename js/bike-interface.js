@@ -11,7 +11,7 @@ var Bike =  require('./../js/bike.js').bikeModule;
 $(document).ready(function() {
 var newBike = new Bike();
 
-// newBike.getMaps();
+newBike.getMaps();
 // showMap();
 
   $('#button').click(function(event) {
