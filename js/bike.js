@@ -19,7 +19,6 @@ Bike.prototype.getBike = function(make, color) {
     console.log(response);
     var i = 0;
     for (var bike of response.bikes) {
-      console.log(bike);
       var title = bike.title;
       var thumblink;
       if (bike.thumb === null) {
@@ -27,12 +26,12 @@ Bike.prototype.getBike = function(make, color) {
       } else {
         thumblink ='<img id="bike'+i+'" class="img" src="'+bike.thumb+'" alt="pic of bike" />';
       }
-      i++;
       $('.showBikes').append('<div class="bike col-sm-4 col-sm-offset-6">' +
       '<h4>'+title+'</h4>'+
        thumblink +
-       '<script> $("[id^=bike]").click(function(event) {event.preventDefault(); alert("'+bike.stolen_location+'"); });</script>' +
+       '<script> $("#bike'+i+'").click(function(event) {event.preventDefault(); alert("'+bike.stolen_location+'"); });</script>' +
       '</div>');
+      i++;
     }
   }).fail(function(error) {
     $('.bikeObject').text(error);
