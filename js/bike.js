@@ -1,10 +1,18 @@
-// api request url - https://bikeindex.org/oauth/token?grant_type=refresh_token&client_id={app_id}&refresh_token={refresh_token}
-//applicatio id - b84fea068c930c28772e933114525841a77bb8b645bde1a117b21d5e44bf3d7c
-//secret - 2b940f6705ba3c9ff419caa1be3034e2897c960c2a424beac7902855a921ef93
 /*jshint esversion: 6 */ //this gets rid of jshint flag
+
+var apiKey = require('./../.env').apiKey;
+//for .env - var apiKey = "AIzaSyDUpTMIvUF9rffa7y5ROrT0xaMTst62ms0";
 
 function Bike() {
 }
+
+Bike.prototype.getMaps = function(){
+  var newScript = document.createElement("script");
+  newScript.src = "https://maps.googleapis.com/maps/api/js?key=" + apiKey + "&callback=initMap";
+
+  var placeholder = document.getElementById("placeholder");
+  document.body.insertBefore(newScript, placeholder);
+};
 
 Bike.prototype.getBike = function(make, color) {
     $.get('https://bikeindex.org/api/v2/bikes_search?page=1&per_page=10&colors='+color+'&manufacturer='+make).then(function(response) {

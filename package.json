@@ -22,5 +22,13 @@
     "jshint": "^2.9.3",
     "vinyl-source-stream": "^1.1.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mehequanna/js-bikeindex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mehequanna/js-bikeindex/issues"
+  },
+  "homepage": "https://github.com/Mehequanna/js-bikeindex#readme",
   "description": ""
 }

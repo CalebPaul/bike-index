@@ -19,12 +19,18 @@ body {
       color: $green;
       text-shadow: 1px 1px 0px rgba(57, 122, 52, 1);
     }
-    .img {
-      width: 50%;
-    }
     .showBikes{
-      height: 650px;
+      height: 750px;
       overflow-y: scroll;
+      text-align: center;
+      .img {
+        margin: 0 auto;
+        display: block;
+        width: 70%;
+      }
+    }
+    input {
+      color: $gray;
     }
     .col-sm-4 {
       border: 1px solid $gray;
