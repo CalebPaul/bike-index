@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="build/css/vendor.css">
     <link rel="stylesheet" href="build/css/styles.css">
     <script type="text/javascript" src="build/js/app.js"></script>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
     <title>Bike Finder</title>
   </head>
   <body class="blur">
@@ -12,7 +14,7 @@
       <h1 class="well well-sm text-center">Bike Stuff</h1>
       <div class="row">
         <!-- Left column -->
-        <div class="search col-sm-4">
+        <div class="search col-sm-5">
           <form class="form-group" action="index.html" method="post">
             <label for="make">Make</label>
             <input id="make" type="text" name="make" value="" placeholder="schwinn">
@@ -24,10 +26,23 @@
           </form>
           <!-- map -->
           <div id="map"></div>
+          <script>
+            var map;
+            function initMap() {
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+              });
+            }
+          </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUpTMIvUF9rffa7y5ROrT0xaMTst62ms0&callback=initMap"
+          async defer></script>
         </div>
         <!-- right column -->
           <div class="showBikes"></div>
+
       </div>
+
     </div>
     <a href="/map.html">test map</a>
   </body>
